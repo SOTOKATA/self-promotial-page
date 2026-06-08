@@ -1,0 +1,28 @@
+
+    <!doctype html>
+<html lang="en" data-theme="ivory-grove">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+            (() => {
+                const lightTheme = "ivory-grove";
+                const darkTheme = "dark-webcraft";
+                const media = window.matchMedia("(prefers-color-scheme: dark)");
+                const applyTheme = () => {
+                    document.documentElement.dataset.theme = media.matches ? darkTheme : lightTheme;
+                };
+
+                applyTheme();
+                media.addEventListener?.("change", applyTheme) ?? media.addListener(applyTheme);
+            })();
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Arial&family=Arial&display=swap" rel="stylesheet" />
+        %sveltekit.head%
+    </head>
+    <body>
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
+</html>
+    
